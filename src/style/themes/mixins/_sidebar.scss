@@ -1,0 +1,116 @@
+@mixin sidebar-theme-mixin(
+  $mainBG,
+  $groupTitleColor,
+  $headerColor,
+  $headerBG,
+  $headerHoverBG,
+  $headerActiveColor,
+  $headerActiveBG,
+  $headerActiveBoxShadow,
+  $scrollareaThumbBG,
+  $scrollareaThumbHoverBG,
+  $itemBG,
+  $itemColor,
+  $itemSubstringColor,
+  $itemIconColor,
+  $itemToggleIconColor,
+  $itemTextIconColor,
+  $itemActiveStateColor,
+  $itemActiveStateIconColor,
+  $itemActiveStateBG,
+  $itemHoverBG,
+  $itemHoverColor,
+  $itemHoverColorTextLinks,
+  $itemActiveColorTextLinks,
+  $itemActiveStateColorTextLinks,
+  $itemActiveFocusColor,
+  $itemActiveFocusBG,
+  $itemActiveFocusBoxShadow,
+  $itemFocusOutline,
+  $topDivBoxShadow
+) {
+  background: $mainBG;
+
+    &.va-sidebar-text-links {
+      .va-sidebar-group-item {
+        &:hover {
+          color: $itemHoverColorTextLinks !important;
+        }
+        &:active {
+          color: $itemActiveColorTextLinks !important;
+        }
+        &.active {
+          color: $itemActiveStateColorTextLinks !important;
+        }
+      }
+    }
+
+
+  .va-sidebar-group-title {
+    color: $groupTitleColor;
+  }
+  .va-sidebar-header {
+    .va-btn {
+      color: $headerColor;
+      background: $headerBG;
+      &:hover {
+        background: $headerHoverBG;
+      }
+      &:active {
+        color: $headerActiveColor;
+        background: $headerActiveBG;
+        -webkit-box-shadow: $headerActiveBoxShadow;
+        -moz-box-shadow: $headerActiveBoxShadow;
+        box-shadow: $headerActiveBoxShadow;
+      }
+    }
+  }
+  .va-sidebar-scrollarea {
+    &-topdiv {
+      box-shadow: $topDivBoxShadow;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $scrollareaThumbBG;
+      &:hover {
+        background: $scrollareaThumbHoverBG;
+      }
+    }
+  }
+  .va-sidebar-group-item {
+    background: $itemBG;
+    color: $itemColor;
+    &-substring {
+      color: $itemSubstringColor;
+    }
+    &-icon {
+      color: $itemIconColor;
+    }
+    &-text-icon, &-toggle-icon {
+      color: $itemToggleIconColor;
+    }
+    &-text {
+      &-icon {
+        color: $itemTextIconColor;
+      }
+    }
+    &.active {
+      color: $itemActiveStateColor;
+      background: $itemActiveStateBG;
+      .va-sidebar-group-item-icon {
+        color: $itemActiveStateIconColor !important;
+      }
+    }
+    &:hover {
+      background: $itemHoverBG;
+      color: $itemHoverColor;
+    }
+    &:active, &:focus {
+      color: $itemActiveFocusColor;
+      background: $itemActiveFocusBG;
+      box-shadow: $itemActiveFocusBoxShadow;
+    }
+    &:focus {
+      outline: $itemFocusOutline !important;
+    }
+  }
+}

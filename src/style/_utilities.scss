@@ -1,0 +1,72 @@
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.position-left-bottom {
+  top: 100% !important;
+  bottom: initial !important;
+  left: initial !important;
+  right: 0px !important;
+}
+
+.position-right-bottom {
+  top: 100% !important;
+  bottom: initial !important;
+  left: 0px !important;
+  right: initial !important;
+}
+
+.position-left-top {
+  top: initial !important;
+  bottom: 40px !important;
+  left: initial !important;
+  right: 0px !important;
+}
+
+.position-right-top {
+  top: initial !important;
+  bottom: 40px !important;
+  left: 0px !important;
+  right: initial !important;
+}
+
+hr {
+  border: 0;
+  border-bottom: 2px solid $N30;
+  margin: 5px 0 15px 0;
+  width: 100%;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.fixed {
+  position: fixed !important;
+}
+
+.va-flex {
+  display: flex;
+}

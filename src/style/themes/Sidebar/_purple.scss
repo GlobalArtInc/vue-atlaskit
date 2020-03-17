@@ -1,0 +1,40 @@
+.va-sidebar--theme-purple {
+  @include sidebar-theme-mixin(
+    $mainBG: $P500,
+    $groupTitleColor: $P200,
+    $headerColor: $N30,
+    $headerBG: transparent,
+    $headerHoverBG: #342882,
+    $headerActiveColor: $N0,
+    $headerActiveBG: $P400,
+    $headerActiveBoxShadow: inset 0px 0px 0px 2px $P200,
+    $scrollareaThumbBG: rgba(141, 163, 202, 0.52),
+    $scrollareaThumbHoverBG: rgba(141, 163, 202, 0.7),
+    $itemBG: transparent,
+    $itemColor: $P75 !important,
+    $itemSubstringColor: $P200,
+    $itemIconColor: $N40,
+    $itemToggleIconColor: $P300 !important,
+    $itemTextIconColor: $N300,
+    $itemActiveStateColor: $N0 !important,
+    $itemActiveStateBG: $P300,
+    $itemActiveStateIconColor: inherit,
+    $itemHoverBG: $P300,
+    $itemHoverColor: inherit,
+    $itemHoverColorTextLinks: $P200,
+    $itemActiveColorTextLinks: $P300,
+    $itemActiveStateColorTextLinks: $N0,
+    $itemActiveFocusColor: $N400,
+    $itemActiveFocusBG: $P400,
+    $itemActiveFocusBoxShadow: inset 0px 0px 0px 0px $P300,
+    $itemFocusOutline: transparent,
+    $topDivBoxShadow: 10px -2px 0px 0px #f4f5f7
+  );
+  @include placeholder-theme-mixin(
+    $textLineBG: $P400,
+    $textLineBeforeBorder: 7px solid $P400,
+    $headingImageBG: $P400,
+    $headingContentTitleBG: $P400,
+    $animatedBeforeBG: linear-gradient(to right, transparent 0%, $P500 15%, transparent 30%)
+  );
+}
