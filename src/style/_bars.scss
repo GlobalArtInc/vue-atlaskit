@@ -124,7 +124,7 @@
   justify-content: flex-start;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-
+  border-right: 1px solid #DCDDDF;
   &-compact {
     .va-sidebar-group-item {
       min-height: 20px;
@@ -312,7 +312,7 @@ sidebar item defaults
   line-height: 1em;
   max-width: 100%;
 
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
