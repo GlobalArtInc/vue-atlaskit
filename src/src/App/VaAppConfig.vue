@@ -226,7 +226,6 @@
             <va-tab name="Source">
               <code>
               <pre class="back"><span class="blue">&lt;template&gt;</span>
-    <span class="comment">&lt;!-- https://vue-atlas.com/documentation/app --&gt;</span>
     <span class="blue">&lt;va-app</span>
       <span class="yellow">bg-color</span>=<span class="green">"{{bgColor}}"</span>
       <span class="yellow">page-bg-color</span>=<span class="green">"{{pageBgColor}}"</span>
@@ -246,20 +245,17 @@
       <span class="yellow">:topbar-priority</span>=<span class="green">"{{topbarPriority}}"</span>
       <span class="yellow">:topbar-padded</span>=<span class="green">"{{topbarPadded}}"</span><span class="blue">&gt;</span>
 
-      <span class="comment">&lt;!-- https://vue-atlas.com/documentation/topbar --&gt;</span>
       <span class="blue">&lt;va-topbar</span> <span class="yellow">theme</span>=<span class="green">"{{topbarTheme}}"</span><span class="blue">&gt;</span>
         <span class="blue">&lt;div</span> <span class="yellow">slot</span>=<span class="green">"left"</span><span class="blue">&gt;</span> L <span class="blue">&lt;/div&gt;</span>
         <span class="blue">&lt;div</span> <span class="yellow">slot</span>=<span class="green">"center"</span><span class="blue">&gt;</span> C <span class="blue">&lt;/div&gt;</span>
         <span class="blue">&lt;div</span> <span class="yellow">slot</span>=<span class="green">"right"</span><span class="blue">&gt;</span> R <span class="blue">&lt;/div&gt;</span>
       <span class="blue">&lt;/va-topbar&gt;</span>
 
-      <span class="comment">&lt;!-- https://vue-atlas.com/documentation/minibar --&gt;</span>
       <span class="blue">&lt;va-minibar</span>
         <span class="yellow">:top-items</span>=<span class="green">"[{icon:'home'},{icon:'search'},{icon:'user'}]"</span>
         <span class="yellow">:bottom-items</span>=<span class="green">"[{icon:'question'}]"</span>
         <span class="yellow">theme</span>=<span class="green">"{{minibarTheme}}"</span> <span class="blue">/&gt;</span>
 
-      <span class="comment">&lt;!-- https://vue-atlas.com/documentation/sidebar --&gt;</span>
       <span class="blue">&lt;va-sidebar</span>
         <span class="yellow">theme</span>=<span class="green">"{{sidebarTheme}}"</span>
         <span class="yellow">:compact</span>=<span class="green">"{{compact}}"</span>
@@ -274,7 +270,6 @@
           <span class="yellow">:show-toggle</span>=<span class="green">"{{showToggle}}"</span> <span class="blue">/&gt;</span>
       <span class="blue">&lt;/va-sidebar&gt;</span>
 
-      <span class="comment">&lt;!-- https://vue-atlas.com/documentation/page --&gt;</span>
       <span class="blue">&lt;va-page</span> <span class="yellow">size</span>=<span class="green">"{{pageSize}}"</span><span class="blue">&gt;</span>
         <span class="blue">&lt;transition&gt;</span>
           <span class="blue">&lt;router-view&gt;</span>
