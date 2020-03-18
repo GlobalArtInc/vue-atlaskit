@@ -8,7 +8,7 @@ dist
 **/*scsslint_tmp*.*
 tags
 tags.lock
-
+vue-atlaskit-npm
 
 ############################
 # IDE
