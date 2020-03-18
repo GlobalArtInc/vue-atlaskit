@@ -37,6 +37,7 @@
 
 <script>
 import element from '../utils/element'
+
 export default {
   name: 'VaNotification',
   props: {
@@ -133,6 +134,7 @@ export default {
           }
         }
       }
+
       /**
        * Classes
        */
@@ -178,9 +180,11 @@ export default {
     classObj () {
       const { effect, type } = this
       const classes = {}
+
       classes['va-notification'] = true
       classes['va-notification-' + type] = true
       classes['va-notification-' + effect] = true
+
       return classes
     },
     styleObj () {
@@ -188,6 +192,7 @@ export default {
     },
     notificationIconType () {
       const { type } = this
+
       switch (type) {
         case 'default':
           return 'home'
@@ -200,6 +205,7 @@ export default {
         case 'info':
           return 'info-circle'
       }
+
       return 'info-circle'
     }
   }
@@ -208,110 +214,123 @@ export default {
 
 <style lang="scss" src="../style/_reset.scss" scoped></style>
 <style lang="scss">
-  @import "../variables";
-  .va-notification {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    z-index: 2000;
-    display: none;
-    overflow: auto;
+@import "../variables";
+
+.va-notification {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 2000;
+  display: none;
+  overflow: auto;
+  outline: 0;
+  transition: all 0.15s ease;
+
+  &-dialog {
+    position: relative;
+    width: auto;
+    margin: 25px;
+  }
+
+  &-content {
+    position: relative;
+    background-color: $N0;
+    background-clip: padding-box;
     outline: 0;
-    transition: all 0.15s ease;
-    &-dialog {
-      position: relative;
-      width: auto;
-      margin: 25px;
-    }
-    &-content {
-      position: relative;
-      background-color: $N0;
-      background-clip: padding-box;
-      outline: 0;
-      box-shadow: none;
-      border: none;
-    }
-    /**
-     * Expands to va-notification-fade va-notification-in
-     */
-    &-fade#{&}-in {
-      opacity: 1 !important;
-    }
-    /**
-     * fade-right
-     */
-    &-fade-right &-content {
-      opacity: 0;
-      transform: translateX(20px);
-      transition: transform 0.15s, opacity 0.15s;
-    }
-    &-fade-right#{&}-in &-content {
-      opacity: 1;
-      transform: translateX(0);
-      box-shadow: rgba(9, 30, 66, 0.08) 0px 1px 2px 0px,
+    box-shadow: none;
+    border: none;
+  }
+
+  /**
+   * Expands to va-notification-fade va-notification-in
+   */
+  &-fade#{&}-in {
+    opacity: 1 !important;
+  }
+
+  /**
+   * fade-right
+   */
+  &-fade-right &-content {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: transform 0.15s, opacity 0.15s;
+  }
+
+  &-fade-right#{&}-in &-content {
+    opacity: 1;
+    transform: translateX(0);
+    box-shadow: rgba(9, 30, 66, 0.08) 0px 1px 2px 0px,
       rgba(9, 30, 66, 0.08) 0px 2px 4px, rgba(9, 30, 66, 0.31) 0px 3px 20px -5px;
-    }
-    &-fade-right#{&}-out &-content {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    @mixin notification-content-inner-mixin($type, $borderColor, $iconColor) {
-      .va-notification-content-inner-#{$type} {
+  }
+
+  &-fade-right#{&}-out &-content {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  @mixin notification-content-inner-mixin($type, $borderColor, $iconColor) {
+    .va-notification-content-inner-#{$type} {
+      display: flex;
+      flex-direction: row;
+      &-left {
+        flex-basis: 40px;
         display: flex;
-        flex-direction: row;
-        &-left {
-          flex-basis: 40px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          text-align: center;
-          border-left: 2px solid $borderColor;
-          i {
-            color: $iconColor;
-          }
-        }
-        &-right {
-          flex: 1;
-          padding: 20px;
-          &-close {
-            position: absolute;
-            top: 13px;
-            right: 13px;
-          }
-          &-title {
-            font-weight: bold;
-            max-width: 90%;
-          }
-          &-message {
-            margin-top: 5px;
-          }
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        border-left: 2px solid $borderColor;
+        i {
+          color: $iconColor;
         }
       }
-    }
-    @mixin notification-content-mixin(
-      $type,
-      $borderSize,
-      $borderColor,
-      $iconColor
-    ) {
-      .va-notification-content {
-        border-top: $borderSize solid $borderColor;
-        border-right: $borderSize solid $borderColor;
-        border-bottom: $borderSize solid $borderColor;
+      &-right {
+        flex: 1;
+        padding: 20px;
+        &-close {
+          position: absolute;
+          top: 13px;
+          right: 13px;
+        }
+        &-title {
+          font-weight: bold;
+          max-width: 90%;
+        }
+        &-message {
+          margin-top: 5px;
+        }
       }
-      @include notification-content-inner-mixin($type, $borderColor, $iconColor);
-    }
-    &-warning {
-      @include notification-content-mixin('warning', 2px, $Y200, $Y500);
-    }
-    &-danger {
-      @include notification-content-mixin('danger', 2px, $R300, $R300);
-    }
-    &-success {
-      @include notification-content-mixin('success', 2px, $G200, $G400);
-    }
-    &-info {
-      @include notification-content-mixin('info', 2px, $B100, $B400);
     }
   }
+
+  @mixin notification-content-mixin(
+    $type,
+    $borderSize,
+    $borderColor,
+    $iconColor
+  ) {
+    .va-notification-content {
+      border-top: $borderSize solid $borderColor;
+      border-right: $borderSize solid $borderColor;
+      border-bottom: $borderSize solid $borderColor;
+    }
+    @include notification-content-inner-mixin($type, $borderColor, $iconColor);
+  }
+
+  &-warning {
+    @include notification-content-mixin('warning', 2px, $Y200, $Y500);
+  }
+
+  &-danger {
+    @include notification-content-mixin('danger', 2px, $R300, $R300);
+  }
+
+  &-success {
+    @include notification-content-mixin('success', 2px, $G200, $G400);
+  }
+
+  &-info {
+    @include notification-content-mixin('info', 2px, $B100, $B400);
+  }
+}
 </style>

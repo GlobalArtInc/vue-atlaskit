@@ -48,9 +48,9 @@ const open = (options, type = 'info') => {
           title,
           message,
           type: type || 'default',
-          effect: effect || 'fade-left',
+          effect: effect || 'fade-right',
           width: width || '400px',
-          duration: duration || 1500
+          duration: duration
         },
         on: {
           hide: this.handleHide,

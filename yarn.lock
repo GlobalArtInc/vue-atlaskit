@@ -10009,6 +10009,15 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vue-atlas@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/vue-atlas/-/vue-atlas-2.1.8.tgz#819892cb5770275c4693784582bdaa20e8dee2f0"
+  integrity sha512-AJXhoAl6IqnoyXie0LldRiwU2f5pNsEE/ZhfXwb8BMGVTqrwfLXHdfuV5ZOEYAw3V6ueEkaon8vNxq6dRUmScg==
+  dependencies:
+    moment "^2.22.0"
+    velocity-animate "^1.5.0"
+    vue "^2.6.6"
+
 vue-eslint-parser@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-6.0.5.tgz#c1c067c2755748e28f3872cd42e8c1c4c1a8059f"
