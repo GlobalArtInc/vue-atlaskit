@@ -32,6 +32,21 @@
     <va-page size="lg">
       <va-loading size="lg" v-if="!isLoading" center color="black" />
       <div v-else>
+        <va-aside placement="right" header title="DEV ASIDE" ref="devSide">
+          <p>
+            aWDASD
+          </p>
+          <div slot="footer">
+            <va-button-group>
+              <va-button type="primary">
+                button 1
+              </va-button>
+              <va-button type="primary">
+                button 2
+              </va-button>
+            </va-button-group>
+          </div>
+        </va-aside>
         <va-page-header>
           <div slot="breadcrumb">
             <va-breadcrumb separator="/">
@@ -76,6 +91,10 @@
 
         <p>
           <va-button @click="showModal" icon-after="window-maximize">Show a modal</va-button>
+        </p>
+
+        <p>
+          <va-button @click="$refs.devSide.open()">Show a aside</va-button>
         </p>
 
         <p>

@@ -1,20 +1,17 @@
 <template>
   <transition :name="(this.placement === 'left') ? 'slideleft' : 'slideright'">
-    <div :class="classObj" :style="{width:width}" ref="aside" v-show="show">
+    <div :class="classObj" style="padding: 10px" ref="aside" v-show="show">
       <div class="va-aside-dialog">
         <div class="va-aside-content">
-          <div class="va-aside-header" v-if="header">
-            <button
-              class="va-close"
-              @click="close"
-              type="button"
-            >
-              <span>&times;</span>
-            </button>
-            <div class="va-aside-title">{{title}}</div>
+          <div class="va-aside-header" v-if="header" >
+            <va-button @click="close" style="float:left"><va-icon type="times"/></va-button>
+            <div class="va-aside-title" v-if="title">{{title}}</div>
           </div>
           <div class="va-aside-body">
             <slot/>
+          </div>
+          <div class="va-aside-footer">
+            <slot name="footer" />
           </div>
         </div>
       </div>
@@ -149,56 +146,72 @@ export default {
 
 <style lang="scss" src="../style/_reset.scss" scoped></style>
 <style lang="scss">
-@import "../variables";
+  @import "../variables";
 
-.va-aside-open {
-  transition: transform 0.15s;
-}
+  .va-aside-open {
+    transition: transform 0.15s;
+  }
 
-.va-aside {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: 10;
-  overflow: auto;
-  background: $N0;
-  &-left {
-    left: 0;
-    right: auto;
-  }
-  &-right {
-    right: 0;
-    left: auto;
-  }
-  &:focus {
-    outline: 0;
-  }
-  &-dialog {
-    .va-aside-header {
-      .va-close {
-        font-size: 24px;
-        color: $N300;
-      }
-      .va-aside-title {
-        padding-top: 8px;
-        font-size: 24px;
-        color: $N300;
-      }
+  @media only screen and (max-width: 757px), only screen and (max-device-width: 757px) {
+    .va-aside {
+      width: 100%
     }
   }
-  &-backdrop {
+  @media only screen and (min-width: 758px), only screen and (min-device-width: 758px) {
+    .va-aside {
+      width: 30%
+    }
+  }
+
+  .va-aside-footer {
+    position:absolute;
+    bottom:10px;
+  }
+
+  .va-aside {
     position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
-    left: 0;
-    z-index: 5;
-    opacity: 0;
-    transition: opacity 0.15s ease-in-out;
-    background: rgba(9, 30, 66, 0.54);
+    z-index: 10;
+    overflow: auto;
+    background: $N0;
+    &-left {
+      left: 0;
+      right: auto;
+    }
+    &-right {
+      right: 0;
+      left: auto;
+    }
+    &:focus {
+      outline: 0;
+    }
+    &-dialog {
+      .va-aside-header {
+        .va-close {
+          font-size: 24px;
+          color: $N300;
+        }
+        .va-aside-title {
+          padding-top: 8px;
+          font-size: 24px;
+          color: $N300;
+        }
+      }
+    }
+    &-backdrop {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+      background: rgba(9, 30, 66, 0.54);
+    }
+    &-in {
+      opacity: 1;
+    }
   }
-  &-in {
-    opacity: 1;
-  }
-}
 </style>
