@@ -1,6 +1,6 @@
 {
   "name": "@globalart/vue-atlaskit",
-  "version": "2.1.5",
+  "version": "2.1.28",
   "description": "A atlaskit library of Vue components",
   "license": "MIT",
   "main": "dist/vue-atlaskit.common.js",

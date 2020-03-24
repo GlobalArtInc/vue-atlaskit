@@ -621,6 +621,10 @@ export default {
   }
 }
 
+.va-btn:hover {
+  text-decoration: none;
+}
+
 @mixin xs-button-size-mixin() {
   @include btn-size-mixin(
     $padding: 4px 8px,

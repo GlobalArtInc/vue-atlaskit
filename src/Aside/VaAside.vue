@@ -152,12 +152,12 @@ export default {
     transition: transform 0.15s;
   }
 
-  @media only screen and (max-width: 757px), only screen and (max-device-width: 757px) {
+  @media only screen and (max-width: 757px) {
     .va-aside {
       width: 100%
     }
   }
-  @media only screen and (min-width: 758px), only screen and (min-device-width: 758px) {
+  @media only screen and (min-width: 758px) {
     .va-aside {
       width: 30%
     }
@@ -166,6 +166,10 @@ export default {
   .va-aside-footer {
     position:absolute;
     bottom:10px;
+  }
+
+  .va-aside-body {
+    padding-top: 10px;
   }
 
   .va-aside {

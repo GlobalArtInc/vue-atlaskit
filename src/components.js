@@ -17,6 +17,7 @@ import VaRadio from './Radio/VaRadio.vue'
 import VaTable from './Table/VaTable.vue'
 import VaAlert from './Alert/VaAlert.vue'
 import VaAside from './Aside/VaAside.vue'
+import VaIside from './Iside/VaIside.vue'
 import VaRange from './Range/VaRange.vue'
 import VaBadge from './Badge/VaBadge.vue'
 import VaColumn from './Grid/VaColumn.vue'
@@ -94,6 +95,7 @@ const Components = {
   VaRange,
   VaRadio,
   VaAside,
+  VaIside,
   VaButton,
   VaSelect,
   VaOption,

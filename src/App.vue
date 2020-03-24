@@ -29,24 +29,28 @@
       <va-sidebar-group :show-toggle="false" title="Resources" :items="groupTwoItems"/>
     </va-sidebar>
 
-    <va-page size="lg">
-      <va-loading size="lg" v-if="!isLoading" center color="black" />
-      <div v-else>
-        <va-aside placement="right" header title="DEV ASIDE" ref="devSide">
-          <p>
-            aWDASD
-          </p>
-          <div slot="footer">
-            <va-button-group>
-              <va-button type="primary">
-                button 1
-              </va-button>
-              <va-button type="primary">
-                button 2
-              </va-button>
-            </va-button-group>
-          </div>
-        </va-aside>
+    <va-aside placement="right" header title="DEV ASIDE" ref="devSide">
+      <div>
+        aWDASD
+      </div>
+      <div slot="footer">
+        <va-button-group>
+          <va-button @click="$refs.iside.open()" type="primary">
+            button 1
+          </va-button>
+          <va-button type="primary">
+            button 2
+          </va-button>
+        </va-button-group>
+      </div>
+      <va-iside placement="right" header title="TESTsssss" ref="iside">
+        <div>
+          Test
+        </div>
+      </va-iside>
+    </va-aside>
+
+    <va-page size="md">
         <va-page-header>
           <div slot="breadcrumb">
             <va-breadcrumb separator="/">
@@ -130,7 +134,6 @@
             <va-sidebar-group title="Resources" :items="groupTwoItems"/>
           </va-sidebar>
         </va-aside>
-      </div>
     </va-page>
   </va-app>
 </template>
@@ -183,6 +186,12 @@ export default {
     setTimeout(() => {
       this.isLoading = true
     }, 500)
+  },
+  mounted () {
+    setTimeout(() => {
+      this.$refs.devSide.open()
+      this.$refs.inSide.open()
+    }, 600)
   },
   methods: {
     showWarningNotification () {
