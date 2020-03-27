@@ -1,7 +1,7 @@
 <template>
   <transition :name="(this.placement === 'left') ? 'slideleft' : 'slideright'">
-    <div :class="classObj" style="padding: 10px" ref="iside" v-show="show">
-      <div class="va-iside-dialog">
+    <div :class="classObj" ref="iside" v-show="show">
+      <div class="va-iside-dialog" style="padding: 10px">
         <div class="va-iside-content">
           <div class="va-iside-header" v-if="header" >
             <va-button @click="close" style="float:left"><va-icon type="times"/></va-button>

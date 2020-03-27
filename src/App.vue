@@ -29,27 +29,6 @@
       <va-sidebar-group :show-toggle="false" title="Resources" :items="groupTwoItems"/>
     </va-sidebar>
 
-    <va-aside placement="right" header title="DEV ASIDE" ref="devSide">
-      <div>
-        aWDASD
-      </div>
-      <div slot="footer">
-        <va-button-group>
-          <va-button @click="$refs.iside.open()" type="primary">
-            button 1
-          </va-button>
-          <va-button type="primary">
-            button 2
-          </va-button>
-        </va-button-group>
-      </div>
-      <va-iside placement="right" header title="TESTsssss" ref="iside">
-        <div>
-          Test
-        </div>
-      </va-iside>
-    </va-aside>
-
     <va-page size="md">
         <va-page-header>
           <div slot="breadcrumb">
@@ -76,6 +55,27 @@
             </va-select>
           </div>
         </va-page-header>
+
+      <va-aside placement="right" header title="DEV ASIDE" ref="devSide">
+        <div>
+          aWDASD
+        </div>
+        <div slot="footer">
+          <va-button-group>
+            <va-button @click="$refs.iside.open()" type="primary">
+              button 1
+            </va-button>
+            <va-button type="primary">
+              button 2
+            </va-button>
+          </va-button-group>
+        </div>
+        <va-iside placement="right" header title="TESTsssss" ref="iside">
+          <div>
+            Test
+          </div>
+        </va-iside>
+      </va-aside>
 
         <p>
           Proin risus lectus, interdum vitae justo vel, malesuada condimentum sem. Proin volutpat posuere molestie. Fusce vel justo arcu. Quisque quis dapibus tortor. Donec ultricies mattis cursus. Phasellus accumsan feugiat massa. Ut semper aliquet turpis, eu finibus est egestas sit amet. Aliquam rhoncus elementum enim. Donec sit amet ligula egestas, accumsan neque sit amet, faucibus eros. Etiam consequat eros at lacus bibendum fermentum. Aenean tempor libero ut sem fermentum, nec ultrices arcu rutrum. Nulla facilisi. Nullam condimentum sapien et suscipit lacinia. Duis vulputate dolor placerat, pellentesque orci non, ultricies lacus. Fusce nec ligula in turpis euismod blandit ultricies et lorem.
@@ -120,7 +120,7 @@
           </div>
         </va-modal>
 
-        <va-aside placement="left" ref="myAside" :width="desktopMinibarWidth + desktopSidebarWidth + `px`">
+        <va-aside nav placement="left" ref="myAside" :width="desktopMinibarWidth + desktopSidebarWidth + `px`">
           <!-- The va-sidebar and va-minibar below still receive updates from va-app, -->
           <!-- just as the va-sidebar and va-minibar above do.                        -->
           <va-minibar

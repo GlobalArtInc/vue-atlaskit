@@ -1,6 +1,6 @@
 <template>
   <transition :name="(this.placement === 'left') ? 'slideleft' : 'slideright'">
-    <div :class="classObj" style="padding: 10px" ref="aside" v-show="show">
+    <div :class="classObj" :style="{width:width}" ref="aside" v-show="show">
       <div class="va-aside-dialog">
         <div class="va-aside-content">
           <div class="va-aside-header" v-if="header" >
@@ -44,7 +44,7 @@ export default {
     },
     width: {
       type: String,
-      default: '304px',
+      default: '',
       required: false
     }
   },
@@ -189,6 +189,9 @@ export default {
     }
     &:focus {
       outline: 0;
+    }
+    .va-aside-dialog {
+      padding: 10px;
     }
     &-dialog {
       .va-aside-header {
