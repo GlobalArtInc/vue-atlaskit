@@ -534,15 +534,6 @@ export default {
       $fontColActive: $B500
     );
 
-    &:hover {
-      text-decoration: underline !important;
-    }
-
-    &:active,
-    &:focus {
-      text-decoration: underline !important;
-    }
-
     @include button-focus-mixin($N30);
   }
 
@@ -555,15 +546,6 @@ export default {
       $bgColActive: transparent,
       $fontColActive: $N400
     );
-
-    &:hover {
-      text-decoration: underline !important;
-    }
-
-    &:active,
-    &:focus {
-      text-decoration: underline !important;
-    }
 
     @include button-focus-mixin($N30);
   }
@@ -703,10 +685,6 @@ export default {
   user-select: none;
   transition: background 0.1s ease-out,
     box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38);
-
-  &:hover {
-    text-decoration: none;
-  }
 
   &:focus,
   &:active:focus,

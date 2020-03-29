@@ -40,7 +40,9 @@
           <div slot="title">Sandbox</div>
           <div slot="subtitle">A sandbox or basic boilerplate layout</div>
           <div slot="actions">
-            <va-button href="https://github.com/GlobalArtLimited/vue-atlaskit">GitHub</va-button>
+            <router-link to="/">
+              <va-button href="https://github.com/GlobalArtLimited/vue-atlaskit">GitHub</va-button>
+            </router-link>
             <va-button href="https://www.npmjs.com/package/@globalart/vue-atlaskit">npm</va-button>
           </div>
           <div slot="bottom">
@@ -189,8 +191,8 @@ export default {
   },
   mounted () {
     setTimeout(() => {
-      this.$refs.devSide.open()
-      this.$refs.inSide.open()
+      //      this.$refs.devSide.open()
+      //      this.$refs.inSide.open()
     }, 600)
   },
   methods: {
