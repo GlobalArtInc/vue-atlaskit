@@ -68,8 +68,6 @@ $half-gutter-width: $gutter-width / 2;
   .va-col-#{$name}-#{$num} {
     box-sizing: border-box;
     flex: 0 0 auto;
-    padding-right: $gutter-width * 0.5;
-    padding-left: $gutter-width * 0.5;
     flex-basis: 100% / $num-columns * $num;
     max-width: 100% / $num-columns * $num;
   }
