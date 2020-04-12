@@ -63,7 +63,7 @@ export default {
     },
     effect: {
       type: String,
-      default: 'fade-right',
+      default: 'fade-left',
       required: false
     },
     type: {
@@ -108,11 +108,11 @@ export default {
             if (currentMarginTop && currentMarginTop !== '0px') {
               const m = Math.abs(currentMarginTop.slice(0, -2))
               const dist = parseInt(m + distanceToMove)
-              x[i].style['top'] = '-' + dist + 'px'
-              x[i].style['right'] = '-' + dist + 'px'
+              x[i].style['bottom'] = '-' + dist + 'px'
+              x[i].style['left'] = '-' + dist + 'px'
             } else {
-              x[i].style['top'] = distanceToMove * -1 + 'px'
-              x[i].style['right'] = distanceToMove * -1 + 'px'
+              x[i].style['bottom'] = distanceToMove * -1 + 'px'
+              x[i].style['left'] = distanceToMove * -1 + 'px'
             }
           }
         }
@@ -154,7 +154,7 @@ export default {
         element.removeClass(el, 'va-notification-in')
         element.addClass(el, 'va-notification-out')
         setTimeout(() => {
-          el.style.display = 'none'
+          el.remove()
           element.removeClass(body, 'va-notification-open')
           element.removeClass(el, 'va-notification-out')
           this.$emit('closed', { type: 'closed' })
@@ -218,8 +218,8 @@ export default {
 
 .va-notification {
   position: fixed;
-  top: 0px;
-  right: 0px;
+  left: 0px;
+  bottom: 0px;
   z-index: 2000;
   display: none;
   overflow: auto;
@@ -246,6 +246,28 @@ export default {
    */
   &-fade#{&}-in {
     opacity: 1 !important;
+  }
+
+  /**
+   * fade-left
+   */
+  &-fade-left &-content {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  &-fade-left#{&}-in &-content {
+    opacity: 1;
+    transform: translateX(0);
+    box-shadow: rgba(9, 30, 66, 0.08) 0px 1px 2px 0px,
+    rgba(9, 30, 66, 0.08) 0px 2px 4px, rgba(9, 30, 66, 0.31) 0px 3px 20px -5px;
+  }
+
+  &-fade-left#{&}-out &-content {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.5s, opacity 0.5s;
   }
 
   /**

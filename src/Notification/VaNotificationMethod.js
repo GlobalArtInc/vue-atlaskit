@@ -48,7 +48,7 @@ const open = (options, type = 'info') => {
           title,
           message,
           type: type || 'default',
-          effect: effect || 'fade-right',
+          effect: effect || 'fade-left',
           width: width || '400px',
           duration: duration
         },

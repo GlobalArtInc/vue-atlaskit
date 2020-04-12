@@ -198,12 +198,8 @@ export default {
   methods: {
     showWarningNotification () {
       this.notification.warning({
-        title: 'Change default MySQL password to something other than "root"',
-        message: `For security reasons, make sure you change the password of the MySQL
-        user 'root' to something other than 'root' when you publish this application.
-        <br/>
-        <br/>
-        <a href='#'>Instructions</a>`,
+        title: 'Notification title',
+        message: 'Notification description',
         duration: 0
       })
     },
