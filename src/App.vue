@@ -92,7 +92,12 @@
         </p>
 
         <p>
-          <va-button @click="showWarningNotification">Show warning notification</va-button>
+          <va-button-group>
+            <va-button @click="showSuccessNotification">Show success notification</va-button>
+            <va-button @click="showInfoNotification">Show info notification</va-button>
+            <va-button @click="showWarningNotification">Show warning notification</va-button>
+            <va-button @click="showDangerNotification">Show danger notification</va-button>
+          </va-button-group>
         </p>
 
         <p>
@@ -196,10 +201,28 @@ export default {
     }, 600)
   },
   methods: {
+    showSuccessNotification () {
+      this.notification.success({
+        title: 'Success notification',
+        message: 'ww',
+        duration: 0
+      })
+    },
+    showInfoNotification () {
+      this.notification.info({
+        title: 'Info notification',
+        duration: 0
+      })
+    },
     showWarningNotification () {
       this.notification.warning({
-        title: 'Notification title',
-        message: 'Notification description',
+        title: 'Warning notification',
+        duration: 0
+      })
+    },
+    showDangerNotification () {
+      this.notification.danger({
+        title: 'Danger notification',
         duration: 0
       })
     },

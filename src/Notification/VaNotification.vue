@@ -1,31 +1,22 @@
 <template>
-  <div :class="classObj" :style="styleObj" ref="notification" v-if="alive">
-    <div
-      class="va-notification-dialog"
-      :style="{'width': width }"
-    >
+  <div :class="classObj" :style="styleObj" v-if="alive" ref="notification">
+    <div class="va-notification-dialog" :style="{'width': width }">
       <div class="va-notification-content">
         <div :class="`va-notification-content-inner-${type}`">
-          <div
-            :class="`va-notification-content-inner-${type}-left`"
-          >
-            <va-icon :type="notificationIconType"/>
+          <div :class="`va-notification-content-inner-${type}-left`">
+            <va-icon :style="styleText" style="font-size: 1rem"  class="va-notification-content-text" :type="notificationIconType"/>
           </div>
-          <div
-            :class="`va-notification-content-inner-${type}-right`"
-          >
-            <div
-              :class="`va-notification-content-inner-${type}-right-close`"
-            >
-              <va-button @click="close" type="subtle" size="sm">
-                <va-icon size="14px" type="times"/>
-              </va-button>
+          <div :class="`va-notification-content-inner-${type}-right va-notification-content-text`">
+            <div :class="`va-notification-content-inner-${type}-right-close`">
+              <div style="cursor: pointer" @click="close">
+                <va-icon size="16px" class="va-notification-content-text" type="times"/>
+              </div>
             </div>
             <div
-              :class="`va-notification-content-inner-${type}-right-title`"
+              :class="`va-notification-content-inner-${type}-right-title va-notification-content-text`"
             >{{title}}</div>
             <div
-              :class="`va-notification-content-inner-${type}-right-message`"
+              :class="`va-notification-content-inner-${type}-right-message va-notification-content-text`"
               v-html="message"
             />
           </div>
@@ -81,7 +72,8 @@ export default {
     const show = this.show
     return {
       isShow: show,
-      alive: true
+      alive: true,
+      styleText: {}
     }
   },
   mounted () {
@@ -101,20 +93,19 @@ export default {
           'va-notification-in'
         )
         this.numberOfParentModals = x.length
-        const distanceToMove = 5
+        // const distanceToMove = 5
         if (this.numberOfParentModals > 0) {
-          for (let i = 0; i < this.numberOfParentModals; i++) {
+        /*  for (let i = 0; i < this.numberOfParentModals; i++) {
             const currentMarginTop = x[i].style['top']
             if (currentMarginTop && currentMarginTop !== '0px') {
               const m = Math.abs(currentMarginTop.slice(0, -2))
               const dist = parseInt(m + distanceToMove)
-              x[i].style['bottom'] = '-' + dist + 'px'
-              x[i].style['left'] = '-' + dist + 'px'
             } else {
               x[i].style['bottom'] = distanceToMove * -1 + 'px'
               x[i].style['left'] = distanceToMove * -1 + 'px'
             }
           }
+          */
         }
       } else {
         const x = document.getElementsByClassName(
@@ -199,9 +190,9 @@ export default {
         case 'warning':
           return 'exclamation-triangle'
         case 'danger':
-          return 'exclamation-triangle'
+          return 'exclamation-circle'
         case 'success':
-          return 'thumbs-up'
+          return 'check-circle'
         case 'info':
           return 'info-circle'
       }
@@ -225,6 +216,10 @@ export default {
   overflow: auto;
   outline: 0;
   transition: all 0.15s ease;
+
+  &-icon {
+    font-size: 1.7em;
+  }
 
   &-dialog {
     position: relative;
@@ -301,14 +296,14 @@ export default {
         flex-direction: column;
         justify-content: space-around;
         text-align: center;
-        border-left: 2px solid $borderColor;
+        margin-left: 1em;
         i {
           color: $iconColor;
         }
       }
       &-right {
         flex: 1;
-        padding: 20px;
+        padding: 20px 20px 20px 1em;
         &-close {
           position: absolute;
           top: 13px;
@@ -327,32 +322,32 @@ export default {
 
   @mixin notification-content-mixin(
     $type,
-    $borderSize,
-    $borderColor,
-    $iconColor
+    $background,
+    $textColor
   ) {
     .va-notification-content {
-      border-top: $borderSize solid $borderColor;
-      border-right: $borderSize solid $borderColor;
-      border-bottom: $borderSize solid $borderColor;
+      background: $background;
     }
-    @include notification-content-inner-mixin($type, $borderColor, $iconColor);
+    .va-notification-content-text {
+      color: $textColor;
+    }
+    @include notification-content-inner-mixin($type, $background, '');
   }
 
   &-warning {
-    @include notification-content-mixin('warning', 2px, $Y200, $Y500);
+    @include notification-content-mixin('warning', $WARNING, $G252858);
   }
 
   &-danger {
-    @include notification-content-mixin('danger', 2px, $R300, $R300);
+    @include notification-content-mixin('danger', $DANGER, $WHITE);
   }
 
   &-success {
-    @include notification-content-mixin('success', 2px, $G200, $G400);
+    @include notification-content-mixin('success', $SUCCESS, $WHITE);
   }
 
   &-info {
-    @include notification-content-mixin('info', 2px, $B100, $B400);
+    @include notification-content-mixin('info', $INFO, $WHITE);
   }
 }
 </style>
