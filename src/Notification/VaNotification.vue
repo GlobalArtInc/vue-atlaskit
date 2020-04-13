@@ -105,8 +105,6 @@ export default {
               // x[i].style['right'] = '-' + dist + 'px'
             } else {
               // var height = x[i].clientHeight + 25
-              var dialog = x[i].getElementsByClassName('va-notification-dialog')[0].offsetHeight + 32
-              console.log(dialog)
               // x[i].style['transform'] = 'translateY(' + dialog + 'px)'
               // x[i].style['bottom'] = '-100px'
               // x[i].style['bottom'] = distanceToMove * -1 + 'px'
