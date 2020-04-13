@@ -225,7 +225,7 @@ export default {
 .va-notification {
   position: fixed;
   left: 3rem;
-  bottom: 2.5rem;
+  bottom: 1.5rem;
   z-index: 2000;
   display: none;
   overflow: auto;
@@ -270,8 +270,9 @@ export default {
   &-fade-left#{&}-in &-content {
     opacity: 1;
     transform: translateX(0);
-    box-shadow: rgba(9, 30, 66, 0.08) 0px 1px 2px 0px,
-    rgba(9, 30, 66, 0.08) 0px 2px 4px, rgba(9, 30, 66, 0.31) 0px 3px 20px -5px;
+    -webkit-box-shadow: 0px 5px 5px -2px rgba(34, 60, 80, 0.25);
+    -moz-box-shadow: 0px 5px 5px -2px rgba(34, 60, 80, 0.25);
+    box-shadow: 0px 5px 5px -2px rgba(34, 60, 80, 0.25);
   }
 
   &-fade-left#{&}-out &-content {
@@ -371,7 +372,7 @@ export default {
 }
 
 .va-notification:nth-child(n+1) {
-  transform: translateX(0px) translateY(100%) translateY(2em);
+  transform: translateX(0px) translateY(100%) translateY(1em);
 }
 
 .va-notification:last-child {
