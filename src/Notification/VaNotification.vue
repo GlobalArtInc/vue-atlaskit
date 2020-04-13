@@ -93,13 +93,13 @@ export default {
           'va-notification-in'
         )
         this.numberOfParentModals = x.length
-        const distanceToMove = 5
+        // const distanceToMove = 5
         if (this.numberOfParentModals > 0) {
           for (let i = 0; i < this.numberOfParentModals; i++) {
             const currentMarginTop = x[i].style['top']
             if (currentMarginTop && currentMarginTop !== '0px') {
-              const m = Math.abs(currentMarginTop.slice(0, -2))
-              const dist = parseInt(m + distanceToMove)
+              // const m = Math.abs(currentMarginTop.slice(0, -2))
+              // const dist = parseInt(m + distanceToMove)
               // x[i].style['margin-top'] = dist + 'px'
               // x[i].style['top'] = '-' + dist + 'px'
               // x[i].style['right'] = '-' + dist + 'px'
