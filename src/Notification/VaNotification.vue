@@ -93,19 +93,26 @@ export default {
           'va-notification-in'
         )
         this.numberOfParentModals = x.length
-        // const distanceToMove = 5
+        const distanceToMove = 5
         if (this.numberOfParentModals > 0) {
-        /*  for (let i = 0; i < this.numberOfParentModals; i++) {
+          for (let i = 0; i < this.numberOfParentModals; i++) {
             const currentMarginTop = x[i].style['top']
             if (currentMarginTop && currentMarginTop !== '0px') {
               const m = Math.abs(currentMarginTop.slice(0, -2))
               const dist = parseInt(m + distanceToMove)
+              x[i].style['margin-top'] = dist + 'px'
+              // x[i].style['top'] = '-' + dist + 'px'
+              // x[i].style['right'] = '-' + dist + 'px'
             } else {
-              x[i].style['bottom'] = distanceToMove * -1 + 'px'
-              x[i].style['left'] = distanceToMove * -1 + 'px'
+              // var height = x[i].clientHeight + 25
+              var dialog = x[i].getElementsByClassName('va-notification-dialog')[0].offsetHeight + 32
+              console.log(dialog)
+              // x[i].style['transform'] = 'translateY(' + dialog + 'px)'
+              // x[i].style['bottom'] = '-100px'
+              // x[i].style['bottom'] = distanceToMove * -1 + 'px'
+              // x[i].style['left'] = distanceToMove * -1 + 'px'
             }
           }
-          */
         }
       } else {
         const x = document.getElementsByClassName(
@@ -154,6 +161,15 @@ export default {
     }
   },
   methods: {
+    getTranslateY (obj) {
+      let match = obj.match(/translateY\(([0-9]+(px|em|%|ex|ch|rem|vh|vw|vmin|vmax|mm|cm|in|pt|pc))\)/)
+      if (match != null) {
+        return {
+          0: match[1].split('px')[0],
+          1: match[1].split('px')[0] + 'px'
+        }
+      }
+    },
     close () {
       this.isShow = false
       setTimeout(() => {
@@ -209,13 +225,13 @@ export default {
 
 .va-notification {
   position: fixed;
-  left: 0px;
-  bottom: 0px;
+  left: 3rem;
+  bottom: 2.5rem;
   z-index: 2000;
   display: none;
   overflow: auto;
   outline: 0;
-  transition: all 0.15s ease;
+  transition: transform 400ms ease-in-out 0s;
 
   &-icon {
     font-size: 1.7em;
@@ -349,5 +365,17 @@ export default {
   &-info {
     @include notification-content-mixin('info', $INFO, $WHITE);
   }
+}
+
+.va-notification:first-child {
+  animation: initial;
+}
+
+.va-notification:nth-child(2) {
+  z-index: 4;
+}
+
+.va-notification:nth-child(n+2) {
+  transform: translateX(0px) translateY(100%) translateY(0.5em);
 }
 </style>
