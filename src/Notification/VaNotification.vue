@@ -17,6 +17,7 @@
             >{{title}}</div>
             <div
               :class="`va-notification-content-inner-${type}-right-message va-notification-content-text`"
+              v-if="message"
               v-html="message"
             />
           </div>
@@ -238,7 +239,7 @@ export default {
   &-dialog {
     position: relative;
     width: auto;
-    margin: 25px;
+    margin: 0 25px 20px 25px;
   }
 
   &-content {
@@ -369,11 +370,11 @@ export default {
   animation: initial;
 }
 
-.va-notification:nth-child(2) {
-  z-index: 4;
+.va-notification:nth-child(n+1) {
+  transform: translateX(0px) translateY(100%) translateY(2em);
 }
 
-.va-notification:nth-child(n+2) {
-  transform: translateX(0px) translateY(100%) translateY(0.5em);
+.va-notification:last-child {
+  transform: none;
 }
 </style>

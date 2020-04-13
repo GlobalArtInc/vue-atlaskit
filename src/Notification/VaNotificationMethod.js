@@ -4,7 +4,7 @@ import VaNotification from './VaNotification.vue'
 const createNode = () => {
   const $body = document.querySelector('body')
   const $node = document.createElement('div')
-  $body.prepend($node)
+  $body.appendChild($node)
   return $node
 }
 
