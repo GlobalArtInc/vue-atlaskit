@@ -292,7 +292,7 @@ export default {
 
   &-fade-right#{&}-in &-content {
     opacity: 1;
-    transform: translateX(0); v
+    transform: translateX(0);
     box-shadow: rgba(9, 30, 66, 0.08) 0px 1px 2px 0px,
       rgba(9, 30, 66, 0.08) 0px 2px 4px, rgba(9, 30, 66, 0.31) 0px 3px 20px -5px;
   }
