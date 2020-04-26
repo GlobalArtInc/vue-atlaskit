@@ -131,6 +131,7 @@
           <!-- The va-sidebar and va-minibar below still receive updates from va-app, -->
           <!-- just as the va-sidebar and va-minibar above do.                        -->
           <va-minibar
+            theme="dark"
             :style="`top:0;width:${desktopMinibarWidth}px;`"
             :top-items="mbTopItems"
             :bottom-items="mbBottomItems" />
