@@ -104,13 +104,14 @@
       background: $itemHoverBG;
       color: $itemHoverColor;
     }
-    &:active, &:focus {
+    &:active {
       color: $itemActiveFocusColor;
       background: $itemActiveFocusBG;
       box-shadow: $itemActiveFocusBoxShadow;
     }
     &:focus {
-      outline: $itemFocusOutline !important;
+      display: none;
+      /* outline: $itemFocusOutline !important; */
     }
   }
 }
