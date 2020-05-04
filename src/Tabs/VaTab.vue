@@ -9,7 +9,7 @@ export default {
   name: 'VaTab',
   props: {
     id: {
-      type: Number,
+      type: String,
       default: null
     },
     name: {
