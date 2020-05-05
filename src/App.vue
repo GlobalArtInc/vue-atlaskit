@@ -90,7 +90,20 @@
         <p>
           Aenean dapibus blandit sem at convallis. Duis semper quis nulla ac mattis. Sed egestas posuere laoreet. Pellentesque tempor felis sed augue iaculis, at placerat lectus consequat. Proin at eros tincidunt, placerat felis eget, vehicula augue. Aliquam vitae fringilla eros. In justo arcu, imperdiet nec ullamcorper at, mattis eget odio. Phasellus laoreet massa in commodo posuere. Maecenas ultrices placerat massa eget interdum. Fusce eu ullamcorper enim.
         </p>
-
+        <p>
+          <va-tabs>
+            <va-tab id="test-1" name="test">
+              <div>
+                Test
+              </div>
+            </va-tab>
+            <va-tab id="test-2" name="test 2">
+              <div>
+                Test 2
+              </div>
+            </va-tab>
+          </va-tabs>
+        </p>
         <p>
           <va-button-group>
             <va-button @click="showSuccessNotification">Show success notification</va-button>
