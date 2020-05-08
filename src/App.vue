@@ -8,7 +8,6 @@
     :mobile-sidebar-width="mobileSidebarWidth"
     :mobile-minibar-width="mobileMinibarWidth"
   >
-    <va-app-config/>
 
     <va-topbar theme="default">
       <div slot="left">
@@ -21,10 +20,11 @@
     </va-topbar>
 
     <va-minibar
+      theme="blue"
       :top-items="mbTopItems"
       :bottom-items="mbBottomItems"/>
 
-    <va-sidebar compact>
+    <va-sidebar theme="blue">
       <va-sidebar-group :show-toggle="false" title="Navigation" :items="groupOneItems"/>
       <va-sidebar-group :show-toggle="false" title="Resources" :items="groupTwoItems"/>
     </va-sidebar>

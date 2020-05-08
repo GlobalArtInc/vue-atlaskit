@@ -310,8 +310,8 @@ export default {
        * VaApp when it broadcasts initial values.
        * See broadcastDefaultsToConfig()
        */
-      minibarTheme: 'default',
-      sidebarTheme: 'default',
+      minibarTheme: 'blue',
+      sidebarTheme: 'blue',
       topbarTheme: 'blue',
 
       showToggle: false,
