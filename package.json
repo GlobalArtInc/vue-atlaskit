@@ -11,9 +11,12 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
+    "gh:build": "vue-cli-service build",
     "build": "vue-cli-service build --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "publish": "sh publish.sh",
+    "deploy": "sh deploy.sh"
   },
   "files": [
     "dist/*",
