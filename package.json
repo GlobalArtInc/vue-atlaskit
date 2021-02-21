@@ -15,8 +15,10 @@
     "build": "vue-cli-service build --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "publish": "sh publish.sh",
-    "deploy": "sh deploy.sh"
+    "win:publish": "./scripts/publish.bat",
+    "win:deploy": "./scripts/deploy.bat",
+    "sh:publish": "sh ./scripts/publish.sh",
+    "sh:deploy": "sh ./scripts/deploy.sh"
   },
   "files": [
     "dist/*",
