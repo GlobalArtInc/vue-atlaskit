@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: 'https://globalartlimited.github.io/vue-atlaskit/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-atlaskit/' : ''
 }

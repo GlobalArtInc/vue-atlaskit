@@ -13,7 +13,8 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  routes: routes
+  routes: routes,
+  base: process.env.NODE_ENV === 'production' ? '/vue-atlaskit' : '/'
 })
 
 Vue.config.productionTip = false
